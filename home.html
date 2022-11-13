@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="home.css">
+        <script src="https://kit.fontawesome.com/43bbb351f6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+            <div class="timecontainer">
+                <h2 id="current-time"></h2>
+            </div>
+            <div class="maincontainer">
+                <button class="iconholderblue iconholder">
+                    <i class="fa-brands fa-bluetooth-b fa-7x"></i>
+                    <h2>BLUETOOTH</h2>
+                </button>
+                <button class="iconholdercall iconholder">
+                    <i class="fa-solid fa-phone fa-6x"></i>
+                    <h2>PHONE</h2>
+                </button>
+                <button class="iconholdermusic iconholder">
+                    <i class="fa-solid fa-music fa-7x"></i>
+                    <h2>MUSIC</h2>
+                </button>
+                <button class="iconholdermaps iconholder">
+                    <i class="fa-solid fa-location-dot fa-7x"></i>
+                    <h2>MAPS</h2>
+                </button>
+                <button class="iconholderplay iconholder">
+                    <i class="fa-brands fa-google-play fa-7x"></i>
+                    <h2>PLAY STORE</h2>
+                </button>
+                <button class="iconholderradio iconholder">
+                    <i class="fa-solid fa-radio fa-7x"></i>
+                    <h2>RADIO</h2>
+                </button>
+                <button class="iconholderweather iconholder">
+                    <i class="fa-solid fa-cloud fa-7x"></i>
+                    <h2>WEATHER</h2>
+                </button>
+                <button class="iconholderabout iconholder">
+                    <i class="fa-solid fa-circle-info fa-7x"></i>
+                    <h2>INFO</h2>
+                </button>
+            </div>
+            <div class="brightness">
+                <div class="brightness-box">
+                    <i class="fa-regular fa-sun "></i>
+                        <input type="range" id="range" min="10" max="100" value="100">
+                        <i class="fa-solid fa-sun"></i>
+                </div>
+            </div>
+    </div >
+    <script>
+        let time = document.getElementById("current-time");
+        setInterval(() =>{
+            let d = new Date();
+            time.innerHTML = d.toLocaleTimeString();
+        },1000)
+
+        rangeInput = document.getElementById('range');
+        container = document.getElementsByClassName('area')[0];
+
+        rangeInput.addEventListener("change",function(){
+            container.style.filter = "brightness(" + rangeInput.value + "%)";
+        });
+
+        
+    </script>
+    </body>
+</html>
